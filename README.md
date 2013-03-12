@@ -1,22 +1,23 @@
 compressor
 ==========
 
-A mutithreaded lzma/zlib-compressior (proof of concept). Was made to compress
-whole disk images.
+A mutithreaded lzma/zlib-compressior (proof of concept). Was made to quickly compress
+large disk images. It supports input buffering, output is in raw format.
 
 TODO:
 
-1. Outputs only to STDIN
+1. Currently outputs only to STDIN
 1. Support of external compressors is very buggy
 1. Many TODO's inside code :)
+
 
 Benchmarks
 ----------
 
-Very dirty tests that do not account CPU topology, dynamic clocking, cache settings, etc, etc...
+Very dirty tests that do not account CPU topology, dynamic clocking, cache settings, input buffering, etc, etc...
 AMD FX-8120, 16G ram, Linux fx 3.7.10-1-custom
 
-*LZMA*:
+**LZMA**
 
 ~~~~
 [exe@fx crm3]$ sudo dd if=/dev/sda2 bs=1M count=300 | xz -1 | pv -ab > /dev/null
@@ -51,7 +52,7 @@ AMD FX-8120, 16G ram, Linux fx 3.7.10-1-custom
 ~~~~
 
 
-*ZLIB:*
+**ZLIB**
 
 ~~~~
 [exe@fx crm3]$ sudo dd if=/dev/sda2 bs=1M count=3000 | gzip -1 | pv -ab > /dev/null
