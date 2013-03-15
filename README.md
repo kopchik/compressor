@@ -3,12 +3,16 @@ compressor
 
 A mutithreaded lzma/zlib-compressior (proof of concept). Was made to quickly compress
 large disk images. It supports input buffering, output is in raw format.
+**Achtung!** Raw zlib cannot be decompressed by gzip program. You could use *openssl zlib -d*
+to decompress, but it is broken :(. So try to follow advises from here:
+http://unix.stackexchange.com/questions/22834/how-to-uncompress-zlib-data-in-unix
 
 TODO:
 
 1. Currently outputs only to STDIN
 1. Support of external compressors is very buggy
 1. Many TODO's inside code :)
+1. Implement decompress
 
 
 Benchmarks
