@@ -19,7 +19,8 @@ Benchmarks
 ----------
 
 Very dirty tests that do not account CPU topology, dynamic clocking, cache settings, input buffering, etc, etc...
-AMD FX-8120, 16G ram, Linux fx 3.7.10-1-custom
+*AMD FX-8120, 16G ram, Linux fx 3.7.10-1-custom*. The results are slightly inaccurate because ./compressor
+uses some input buffering :).
 
 **LZMA**
 
